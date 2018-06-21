@@ -2,8 +2,8 @@
 #include <time.h>
 #include <stdio.h>
 /**
- * main - assigns random value to n then prints
- * last number
+ * main - prints last digit of n
+ *
  *
  * Return: 0 (Success)
  */
@@ -19,7 +19,7 @@ int main(void)
 
 	printf("Last digit of %d is %d ", n, last_digit);
 
-	if (lastDigit > 5)
+	if (last_digit > 5)
 		printf(" and is greater than 5\n");
 	else if (n == 0)
 		printf(" and is 0\n");
