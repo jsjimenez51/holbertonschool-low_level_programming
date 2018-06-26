@@ -9,7 +9,7 @@ int main(void)
 {
 	int c;
 
-	char holberton[10] = "Holberton\n";
+	char holberton[11] = "Holberton\n";
 
 	while (holberton[c] != '\0')
 	{
