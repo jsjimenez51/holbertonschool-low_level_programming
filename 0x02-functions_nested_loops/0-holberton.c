@@ -2,7 +2,7 @@
 /**
  * main - prints Holberton
  *
- * Return: (1) Success
+ * Return: (0) Success
  *
  */
 int main(void)
