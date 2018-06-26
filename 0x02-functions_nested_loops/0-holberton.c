@@ -11,7 +11,7 @@ int main(void)
 
 	char holberton[10] = "Holberton\n";
 
-	while(holberton[c] != '\0')
+	while (holberton[c] != '\0')
 	{
 		_putchar(holberton[c]);
 		c++;
