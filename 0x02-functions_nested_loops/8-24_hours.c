@@ -2,10 +2,10 @@
 
 /**
  * jack_bauer - prints minutes of the day
+ * @void: time inputed
  *
  *
- *
- * Return:
+ * Return: void
  */
 void jack_bauer(void)
 {
