@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include <stdio.h>
 
 /**
  * *_strchr - locates a character in a string.
@@ -11,12 +12,11 @@ char *_strchr(char *s, char c)
 {
 	unsigned int count;
 
-	for (count = 0 ; s[count] != '\0' ; count++)
+	for (count = 0 ; s[count] != 0 ; count++)
 		if (s[count] == c)
 			return (s + count);
 
-	if (c == '\0')
+	if (c == 0)
 		return (s + count);
-
 	return ("NULL");
 }
