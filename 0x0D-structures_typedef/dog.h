@@ -8,12 +8,12 @@
  * @owner: input dog's owner
  */
 
-struct dog
+typedef struct dog
 {
 	char *name;
 	float age;
 	char *owner;
-};
+} dog_t;
 
 int _putchar(char c);
 
