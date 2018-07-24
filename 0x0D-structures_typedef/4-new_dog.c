@@ -45,11 +45,6 @@ dog_t *new_dog(char *name, float age, char *owner)
 	struct dog *dmx;
 
 	dmx = malloc(sizeof(dog_t));
-	if (dmx == NULL)
-	{
-		free(dmx);
-		return (NULL);
-	}
 	if (dmx)
 	{
 		dmx->name = _strdup(name);
