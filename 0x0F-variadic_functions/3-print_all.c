@@ -12,6 +12,7 @@ void print_all(const char * const format, ...)
 	va_list input;
 	int i = 0;
 	int ck = 0;
+	char *str;
 
 	va_start(input, format);
 
@@ -30,13 +31,14 @@ void print_all(const char * const format, ...)
 		case 'f':
 			printf("%f", va_arg(input, double));
 		case 's':
-			if (!format[i])
+			str = va_arg(input, char*);
+			if (!str)
 			{
 				printf("(nil)");
 				ck = 1;
 				break;
 			}
-			printf("%s", va_arg(input, char *));
+			printf("%s", str);
 			ck = 1;
 			break;
 		}
