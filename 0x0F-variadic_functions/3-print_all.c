@@ -11,11 +11,11 @@ void print_all(const char * const format, ...)
 {
 	va_list input;
 	int i = 0, ck = 0;
-	char *str;
+	char *str, cse;
 
 	va_start(input, format);
 
-	while (format[i] != '\0' && format != '\0')
+	while (format && format [i])
 	{
 		switch (format[i])
 		{
@@ -28,11 +28,11 @@ void print_all(const char * const format, ...)
 			ck = 1;
 			break;
 		case 'f':
-			printf("%f", va_arg(input, double));
+			printf("%f", (float) va_arg(input, double));
 			ck = 1;
 			break;
 		case 's':
-			str = va_arg(input, char*);
+			str = va_arg(input, char *);
 			ck = 1;
 			if (!str)
 			{
@@ -43,11 +43,15 @@ void print_all(const char * const format, ...)
 			ck = 1;
 			break;
 		}
-		if (format[i + 1] != '\0' && ck == 1)
+		cse = format[i + 1];
+		if (cse != '\0' && ck == 1 &&
+		    (cse == 'c' || cse == 'i' || cse == 'f' || cse == 's'))
+		{
 			printf(", ");
-		ck = 0;
+			ck = 0;
+		}
 		i++;
 	}
-	printf("\n");
 	va_end(input);
+	printf("\n");
 }
