@@ -5,6 +5,7 @@
 /**
  * print_all - prints any input type.
  * @format: list of types of arguments passed to the function.
+ * Return: 0.
  */
 void print_all(const char * const format, ...)
 {
@@ -14,7 +15,7 @@ void print_all(const char * const format, ...)
 
 	va_start(input, format);
 
-	while (format[i])
+	while (format[i] != '\0')
 	{
 		switch (format[i])
 		{
