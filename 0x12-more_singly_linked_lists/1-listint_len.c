@@ -9,7 +9,7 @@
 size_t listint_len(const listint_t *h)
 {
 	const listint_t *tmp;
-	size_t elems;
+	size_t elems = 0;
 
 	if (!h)
 	{
