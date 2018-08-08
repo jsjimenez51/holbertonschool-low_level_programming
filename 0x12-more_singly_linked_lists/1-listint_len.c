@@ -12,8 +12,9 @@ size_t listint_len(const listint_t *h)
 	size_t elems;
 
 	if (!h)
+	{
 		return (0);
-
+	}
 	tmp = h;
 
 	while (tmp)
