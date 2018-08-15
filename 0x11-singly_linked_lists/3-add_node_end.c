@@ -41,7 +41,7 @@ list_t *add_node_end(list_t **head, const char *str)
 	insert->len = _strlen(str);
 	insert->next = NULL;
 
-	if(!*head)
+	if (!*head)
 	{
 		*head = insert;
 		return (*head);
