@@ -1,8 +1,6 @@
 #include "sort.h"
 #include <stdio.h>
 
-
-
 /**
  * listint_len - returns the number of elements in a list
  * @h: the head of the list
