@@ -1,0 +1,26 @@
+#include "holberton.h"
+
+/**
+ * leet - encodes a string into 1337
+ * @s: input string
+ *
+ * Return: pointer to string
+ */
+char *leet(char *s)
+{
+	char letters[11] = "AEOTL";
+	char numbers[6] = "43071";
+	int a, b;
+
+	for (a = 0 ; letters[a] != '\0' ; a++)
+	{
+		for (b = 0; letters[b] != '\0' ; b++)
+		{
+			if ((s[a] == letters[b]) || (s[a] == letters[b] +32))
+			{
+				s[a] = numbers[b];
+			}
+		}
+	}
+	return (s);
+}

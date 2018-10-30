@@ -1,0 +1,54 @@
+#include "holberton.h"
+
+/**
+ * _strlen - finds length of node string.
+ * @s: pointer to the string.
+ *
+ * Return: length of the string.
+ */
+int _strlen(const char *s)
+{
+	int len = 0;
+
+	while (s[len])
+		len++;
+	return (len);
+}~/Holberton/holbertonschool-low_level_programming/0x17-dynamic_libraries (master *%=)
+$ ls
+0-main.c  holberton.h  README.md
+~/Holberton/holbertonschool-low_level_programming/0x17-dynamic_libraries (master *%=)
+File Edit Options Buffers Tools C Help
+#include "holberton.h"
+
+   /**
+    * _strlen - finds length of node string.
+    * @s: pointer to the string.
+    *
+    * Return: length of the string.
+    */
+int _strlen(const char *s)
+{
+	int len = 0;
+
+	while (s[len])
+		len++;
+	return (len);~/Holberton/holbertonschool-low_level_programming/0x17-dynamic_libraries (master *%=)
+$ ls
+0-main.c  holberton.h  README.md
+			       ~/Holberton/holbertonschool-low_level_programming/0x17-dynamic_libraries (master *%=)
+File Edit Options Buffers Tools C Help
+#include "holberton.h"
+
+/**
+ * _strlen - finds length of node string.
+ * @s: pointer to the string.
+ *
+ * Return: length of the string.
+ */
+			       int _strlen(const char *s)
+		       {
+			       int len = 0;
+
+			       while (s[len])
+				       len++;
+			       return (len);

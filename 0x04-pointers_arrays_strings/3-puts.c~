@@ -1,0 +1,16 @@
+#include "holberton.c"
+
+/**
+ * _puts - prints string followed by new line
+ * @
+ *
+ * Return: string.
+ */
+void _puts(char *str)
+{
+	int st;
+
+	for (st = 0; str[st] != '\0' ; st++)
+		_puts(str[st]);
+	_putchar('\n');
+}

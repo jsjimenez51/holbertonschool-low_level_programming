@@ -1,0 +1,33 @@
+#include "holberton.h"
+
+/**
+ * _strlen - checks the length of a string.
+ * @s: pointer to string from main.
+ *
+ * Return: length of string s.
+ */
+int _strlen(char *s)
+{
+	if (*s == 0)
+		return (0);
+	return (1 + _strlen(s +1));
+}
+
+/**
+ * int chk_ends - compares values from ends of string.
+ * @s: input string.
+ * @beg: counter for beginning of string.
+ * @end: counter for end of string.
+ *
+ * Return: 
+
+/**
+ * is_palindrome - checks if a string is a plaindrome.
+ * @s: input string to be checked.
+ *
+ * Return: 1 if string is palindrome, else 0.
+ */
+int is_palindrome(char *s)
+{
+	if (s == 0 || s == 1)
+		

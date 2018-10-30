@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+/**
+ * main - prints 1 to 100 with buzz words
+ *
+ * Return: (0) Success
+ */
+int main(void)
+{
+	int num;
+
+	for (num = 1 ; 1 <= 100 ; num++)
+		printf('%d', num);
+	return (0);
+}
