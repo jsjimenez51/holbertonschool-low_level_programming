@@ -1,18 +1,6 @@
 #include "sort.h"
 
 /**
- *swap - swap the top two elements of the list
- *@list: beginning of list
- *Return: void
- */
-void swap(listint_t **list)
-{
-	int temp
-
-	temp = (*list)->n;
-}
-
-/**
  * listint_len - returns the number of elements in a list
  * @h: the head of the list
  *
@@ -37,19 +25,32 @@ size_t listint_len(const listint_t *h)
 void insertion_sort_list(listint_t **list)
 {
 	listint_t *target = *list;
+	listint_t *temp_n, *ptr;
 
 	if (!*list)
 		return;
 
-	if listint_len(*list) == 1
-		return (*list);
+	if (listint_len(*list) == 1)
+		return;
 
-	while (target->prev != NULL)
+	ptr = (*list)->next;
+	while (ptr != NULL)
 	{
-		if (target->n < target->prev->n)
-			swap;
-		else
-			break;
+		target = ptr->prev;
+		while (target->prev != NULL)
+		{
+			if (target->n < target->prev->n)
+			{
+				target->prev = target->prev->prev;
+				temp_n = target->next;
+				target->next = target->prev;
+				target->next->next = temp_n;
+				target->next->prev = target;
+				print_list(*list);
+			}
+			else
+				break;
+		}
+		ptr = ptr->next;
 	}
-	set target to next node;
 }
