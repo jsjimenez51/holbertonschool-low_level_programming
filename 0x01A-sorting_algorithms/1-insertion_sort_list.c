@@ -1,4 +1,7 @@
 #include "sort.h"
+#include <stdio.h>
+
+
 
 /**
  * listint_len - returns the number of elements in a list
@@ -25,7 +28,7 @@ size_t listint_len(const listint_t *h)
 void insertion_sort_list(listint_t **list)
 {
 	listint_t *target = *list;
-	listint_t *temp_n, *ptr;
+	listint_t *temp_n, *temp_p, *ptr;
 
 	if (!*list)
 		return;
@@ -34,23 +37,48 @@ void insertion_sort_list(listint_t **list)
 		return;
 
 	ptr = (*list)->next;
-	while (ptr != NULL)
+	while (target != NULL)
 	{
-		target = ptr->prev;
-		while (target->prev != NULL)
+		while (target->prev && target->n < target->prev->n)
 		{
-			if (target->n < target->prev->n)
+			temp_p = target->prev;
+			temp_n = target->next;
+			if (temp_p)
+				target->prev = temp_p->prev;
+			target->next = temp_p;
+			temp_p->prev = target;
+			temp_p->next = temp_n;
+			if (temp_n)
+				temp_n->prev = temp_p;
+			if (target->prev)
+				target->prev->next = target;
+			else
+				*list = target;
+			print_list(*list);
+		}
+		if (ptr->next == NULL)
+		{
+			target = ptr;
+			while (target->prev && target->n < target->prev->n)
 			{
-				target->prev = target->prev->prev;
+				temp_p = target->prev;
 				temp_n = target->next;
-				target->next = target->prev;
-				target->next->next = temp_n;
-				target->next->prev = target;
+				if (temp_p)
+					target->prev = temp_p->prev;
+				target->next = temp_p;
+				temp_p->prev = target;
+				temp_p->next = temp_n;
+				if (temp_n)
+					temp_n->prev = temp_p;
+				if (target->prev)
+					target->prev->next = target;
+				else
+					*list = target;
 				print_list(*list);
 			}
-			else
-				break;
+			break;
 		}
 		ptr = ptr->next;
+		target = ptr->prev;
 	}
 }
