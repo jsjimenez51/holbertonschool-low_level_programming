@@ -10,30 +10,36 @@
 void selection_sort(int *array, size_t size)
 {
 	unsigned int i = 0;
-	unsigned int j = 0;
-	int target, ptr, lowest, temp;
+	unsigned int j = 1;
+	int lowest, count, temp = 0;
 
 	for (; i < size - 1 ; i++)
 	{
-		target = array[i];
-		ptr = array[i + 1];
-
-		if (target < ptr)
-			lowest = target;
+		count = 0;
+		j = i + 1;
+		if (array[i] < array[j])
+		{
+			lowest = array[i];
+			count = i;
+		}
 		else
-			lowest = ptr;
+		{
+			lowest = array[j];
+			count = j;
+		}
+
 		for (; j < size ; j++)
 		{
-			if (ptr < lowest)
-				lowest = ptr;
+			if (array[j] < lowest)
+			{
+				lowest = array[j];
+				count = j;
+			}
 		}
-		if (target < array[i + 1])
-		{
-			break;
-		}
-		temp = target;
-		target = lowest;
-		ptr = temp;
+
+		temp = array[i];
+		array[i] = lowest;
+		array[count] = temp;
 		print_array(array, size);
 	}
 
