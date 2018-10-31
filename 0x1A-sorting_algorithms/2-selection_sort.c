@@ -9,14 +9,14 @@
  */
 void selection_sort(int *array, size_t size)
 {
-	int i = 0;
-	int j = 0;
+	unsigned int i = 0;
+	unsigned int j = 0;
 	int target, ptr, lowest, temp;
 
-	for (; i < size -1 ; i++)
+	for (; i < size - 1 ; i++)
 	{
 		target = array[i];
-		ptr = array[i +1];
+		ptr = array[i + 1];
 
 		if (target < ptr)
 			lowest = target;
@@ -27,12 +27,14 @@ void selection_sort(int *array, size_t size)
 			if (ptr < lowest)
 				lowest = ptr;
 		}
-		if target < array[i + 1]
+		if (target < array[i + 1])
+		{
 			break;
-		else
-			temp = target;
-			target = lowest;
-			ptr = temp;
+		}
+		temp = target;
+		target = lowest;
+		ptr = temp;
+		print_array(array, size);
 	}
 
 }
