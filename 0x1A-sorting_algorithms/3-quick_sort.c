@@ -22,7 +22,7 @@ void swap(int *first, int *second, int *array, size_t size)
 /**
  * partition - sorts the values based on the pivot element.
  * @array: the array to be sorted.
- * @higher: higher sub array that will hold values greater than the pivot value.
+ * @higher: higher sub array that will hold values greater than the pivot value
  * @lower: lower sub array that will hold values lower than the pivot value.
  * @size: the size of the array.
  *
@@ -36,7 +36,7 @@ int partition(int *array, int lower, int higher, size_t size)
 
 	for (idx = lower ; idx < higher ; idx++)
 	{
-		if (array[idx] <= pivot) //swaps elements < pivot
+		if (array[idx] <= pivot)
 		{
 			if (p_idx != idx)
 				swap(&array[p_idx], &array[idx], array, size);
@@ -51,7 +51,7 @@ int partition(int *array, int lower, int higher, size_t size)
 /**
  * quicks_rec - function that recursively executes the quicksort algorithm
  * @array: the array to be sorted.
- * @higher: higher sub array that will hold values greater than the pivot value.
+ * @higher: higher sub array that will hold values greater than the pivot value
  * @lower: lower sub array that will hold values lower than the pivot value.
  * @size: the size of the array.
  *
@@ -61,10 +61,10 @@ void quicksort_rec(int *array, int lower, int higher, size_t size)
 {
 	int p_elem;
 
-	if (lower < higher) //ends the recursion
+	if (lower < higher)
 	{
 		p_elem = partition(array, lower, higher, size);
-		quicksort_rec(array, lower, p_elem -1, size);
+		quicksort_rec(array, lower, p_elem - 1, size);
 		quicksort_rec(array, p_elem + 1, higher, size);
 	}
 
