@@ -1,7 +1,7 @@
 #include "sort.h"
 
 /**
- * switch - swaps the values of two element
+ * swap - swaps the values of two element
  * @first: first element value to swap.
  * @second: second element value to swap.
  * @array: the array to be sorted.
@@ -49,7 +49,7 @@ int partition(int *array, int lower, int higher, size_t size)
 }
 
 /**
- * quicks_rec - function that recursively executes the quicksort algorithm
+ * quicksort_rec - function that recursively executes the quicksort algorithm
  * @array: the array to be sorted.
  * @higher: higher sub array that will hold values greater than the pivot value
  * @lower: lower sub array that will hold values lower than the pivot value.
