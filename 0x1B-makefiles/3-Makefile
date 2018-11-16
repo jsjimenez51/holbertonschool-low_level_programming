@@ -1,0 +1,23 @@
+CC = gcc
+# the compiler to use
+SRC = main.c holberton.c
+# files to be compiled
+OBJ = $(SRC:.c=.o)
+# naming obj files to be created, this compiles all .c to .o
+NAME = holberton
+# the name of the executable file to be made
+RM = rm -f
+# program and flag to remove files made
+
+all: $(OBJ)
+	$(CC) $(OBJ) -o $(NAME)
+
+clean:
+	$(RM) *~ $(NAME)
+
+oclean:
+	$(RM) $(OBJ)
+
+fclean: clean oclean
+
+re: oclean all
