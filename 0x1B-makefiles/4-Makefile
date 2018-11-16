@@ -1,6 +1,6 @@
 CC = gcc
 # the compiler to use
-CFLAGS = lWall -Werror -Wextra -pedantic
+CFLAGS = -Wall -Werror -Wextra -pedantic
 SRC = main.c holberton.c
 # files to be compiled
 OBJ = $(SRC:.c=.o)
