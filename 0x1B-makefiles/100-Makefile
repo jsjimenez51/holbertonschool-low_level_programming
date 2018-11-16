@@ -8,7 +8,7 @@ NAME = holberton
 # Runs recipe regardless of whether there is a file with same name
 
 all: $(OBJ) m.h
-	$(CC) $(OBJ) -o $(NAME)
+	$(CC) $? -o $(NAME)
 
 clean:
 	$(RM) -f *~ $(NAME)
