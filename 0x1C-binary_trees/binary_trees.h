@@ -7,7 +7,7 @@
 #include <string.h>
 #include <stddef.h>
 
-/* Struct Functions for Accessing the Binary Tree */
+/* Struct for Accessing the Binary Tree */
 
 /**
  * struct binary_tree_s - Binary tree node
@@ -33,6 +33,9 @@ typedef struct binary_tree_s avl_t;
 
 typedef struct binary_tree_s heap_t;
 
+/* Print Binary Tree */
+void binary_tree_print(const binary_tree_t *);
+
 /* Binary Tree Functions */
 
 binary_tree_t *binary_tree_node(binary_tree_t *parent, int value);
@@ -57,9 +60,8 @@ size_t binary_tree_height(const binary_tree_t *tree);
 
 size_t binary_tree_depth(const binary_tree_t *tree);
 
-/* Print Binary Tree Function & Struct */
-void binary_tree_print(const binary_tree_t *);
-
 size_t binary_tree_size(const binary_tree_t *tree);
+
+size_t binary_tree_leaves(const binary_tree_t *tree);
 
 #endif /* _BINARY_TREES_H_ */
