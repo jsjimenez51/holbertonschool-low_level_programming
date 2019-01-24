@@ -32,13 +32,13 @@ void array_segment_print(int *array, unsigned int start, unsigned int end)
  */
 int binary_search(int *array, size_t size, int value)
 {
-	unsigned int low, mid, high;
+	size_t low, mid, high;
 
 	if (array == NULL || size == 0)
 		return (-1);
 
 	low = 0;
-	high = size -1;
+	high = size - 1;
 
 	while (low <= high)
 	{
@@ -52,7 +52,7 @@ int binary_search(int *array, size_t size, int value)
 			high = mid - 1;
 
 		else
-			low = mid +1;
+			low = mid + 1;
 	}
 	return (-1);
 }
